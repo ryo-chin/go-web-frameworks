@@ -3,20 +3,18 @@ package main
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
+	"github.com/ryo-chin/go-web-frameworks/internal/gin/chat"
 	"io"
 	"math/rand"
 	"net/http"
 )
 
-var roomManager *Manager
-
-type GinCmd struct {
-}
+var roomManager *chat.Manager
 
 func main() {
-	roomManager = NewRoomManager()
+	roomManager = chat.NewRoomManager()
 	router := gin.Default()
-	router.SetHTMLTemplate(html)
+	router.SetHTMLTemplate(chat.Html)
 
 	router.GET("/room/:roomid", roomGET)
 	router.POST("/room/:roomid", roomPOST)

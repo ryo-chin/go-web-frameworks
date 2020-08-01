@@ -2,7 +2,7 @@ package chat
 
 import "html/template"
 
-var html = template.Must(template.New("chat_room").Parse(`
+var Html = template.Must(template.New("chat_room").Parse(`
 <html> 
 <head> 
     <title>{{.roomid}}</title>
